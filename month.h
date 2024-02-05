@@ -3,8 +3,13 @@
 
 #include <iostream>
 
-struct Month {
-    std::string get_month(int) const;
+class Month {
+    public:
+        Month();
+        explicit Month(int);
+        std::string get_month() const;
+    private:
+        int month;
 };
 
 #endif

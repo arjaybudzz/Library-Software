@@ -1,33 +1,19 @@
 #include "month.h"
 #include <iostream>
+#include <array>
 
-std::string Month::get_month(int m) const {
-    switch(m) {
-        case 1:
-            return "January";
-        case 2:
-            return "February";
-        case 3:
-            return "March";
-        case 4:
-            return "April";
-        case 5:
-            return "May";
-        case 6:
-            return "June";
-        case 7:
-            return "July";
-        case 8:
-            return "August";
-        case 9:
-            return "September";
-        case 10:
-            return "October";
-        case 11:
-            return "November";
-        case 12:
-            return "December";
-        default:
-            throw std::out_of_range("Invalid month.");
+static const int MIN_MONTH = 1;
+static const int MAX_MONTH = 12;
+static const std::array<std::string, 13> months = {"", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
+Month::Month():
+    month{MIN_MONTH} {}
+
+Month::Month(int m):
+    month{m} {
+        if (m < MIN_MONTH || m > MAX_MONTH) throw std::out_of_range("Month is invalid.");
     }
+
+std::string Month::get_month() const {
+    return months[month];
 }
