@@ -12,4 +12,12 @@ class Month {
         int month;
 };
 
+std::istream& operator>>(std::istream&, Month&);
+std::ostream& operator<<(std::ostream&, const Month&);
+
+bool operator<(const Month&, const Month&);
+bool operator>(const Month&, const Month&);
+bool operator==(const Month&, const Month&);
+bool operator!=(const Month&, const Month&);
+
 #endif

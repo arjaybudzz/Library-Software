@@ -13,3 +13,46 @@ Day::Day(int d):
     }
 
 int Day::get_day() const { return day; }
+
+// I/O operations
+
+std::istream& operator>>(std::istream& input, Day& day) {
+    int day_val;
+
+    input >> day_val;
+    
+    if (input.fail()) {
+        input.clear();
+        return input;
+    }
+
+    day = Day{day_val};
+    return input;
+}
+
+std::ostream& operator<<(std::ostream& output, const Day& day) {
+    output << day.get_day();
+    return output;
+}
+
+// comparison operators
+
+bool operator<(const Day& left, const Day& right) {
+    return left.get_day() < right.get_day();
+}
+
+bool operator>(const Day& left, const Day& right) {
+    return !(left < right);
+}
+
+bool operator==(const Day& left, const Day& right) {
+    return left.get_day() == right.get_day();
+}
+
+bool operator!=(const Day& left, const Day& right) {
+    return !(left == right);
+}
+
+
+
+

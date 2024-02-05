@@ -17,3 +17,39 @@ Month::Month(int m):
 std::string Month::get_month() const {
     return months[month];
 }
+
+// I/O operations
+
+std::istream& operator>>(std::istream& input, Month& month) {
+    int m_val;
+
+    input >> m_val;
+    if (input.fail()) {
+        input.clear();
+        return input;
+    }
+
+    month = Month{m_val};
+    return input;
+}
+
+std::ostream& operator<<(std::ostream& output, const Month& month) {
+    output << month.get_month();
+    return output;
+}
+
+bool operator<(const Month& left, const Month& right) {
+    return left.get_month() < right.get_month();
+}
+
+bool operator>(const Month& left, const Month& right) {
+    return !(left < right);
+}
+
+bool operator==(const Month& left, const Month& right) {
+    return left.get_month() == right.get_month();
+}
+
+bool operator!=(const Month& left, const Month& right) {
+    return !(left == right);
+}
