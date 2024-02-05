@@ -9,3 +9,5 @@ class Day {
     private:
         int day;
 };
+
+#endif
