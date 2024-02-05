@@ -1,6 +1,6 @@
 #include <iostream>
-#include "day.h"
-#include "month.h"
+#include "../header/day.h"
+#include "../header/month.h"
 
 int main() 
 try{
@@ -8,7 +8,7 @@ try{
     Month month;
 
     std::cout << day.get_day() << std::endl;
-    std::cout << month.get_month(17) << std::endl;
+    std::cout << month.get_month() << std::endl;
 
     return 0;
 }

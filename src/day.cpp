@@ -1,4 +1,4 @@
-#include "day.h"
+#include "../header/day.h"
 #include <stdexcept>
 
 static const int MIN_DAY = 1;
