@@ -6,6 +6,10 @@
 #include "day.h"
 #include "year.h"
 
+class Month;
+class Day;
+class Year;
+
 class Date {
     public:
         Date();
