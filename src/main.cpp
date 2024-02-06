@@ -23,3 +23,7 @@ catch(std::out_of_range& e) {
     std::cerr << e.what() << std::endl;
     return 1;
 }
+catch(std::invalid_argument& e) {
+    std::cerr << e.what() << std::endl;
+    return 2;
+}
