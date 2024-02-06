@@ -8,7 +8,7 @@ class First_Name {
         First_Name();
         explicit First_Name(const std::string&);
 
-        void set_name(const std::string&);
+        void set_first_name(const std::string&);
         std::string get_first_name() const;
     private:
         std::string name;

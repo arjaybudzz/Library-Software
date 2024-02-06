@@ -9,7 +9,7 @@ First_Name::First_Name(const std::string& n_val):
         if (n_val.empty()) throw std::invalid_argument("First name must not be empty!");
     }
 
-void First_Name::set_name(const std::string& n_val) {
+void First_Name::set_first_name(const std::string& n_val) {
     if (n_val.empty()) throw std::invalid_argument("First name must not be empty!");
     name = n_val;
 }
@@ -25,7 +25,7 @@ std::istream& operator>>(std::istream& input, First_Name& first_name) {
         return input;
     }
 
-    first_name = First_Name{n_val};
+    first_name.set_first_name(n_val);
     return input;
 }
 
