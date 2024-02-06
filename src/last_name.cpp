@@ -27,3 +27,24 @@ std::istream& operator>>(std::istream& input, Last_Name& last_name) {
     last_name.set_last_name(n_val);
     return input;
 }
+
+std::ostream& operator<<(std::ostream& output, const Last_Name& last_name) {
+    output << last_name;
+    return output;
+}
+
+bool operator<(const Last_Name& left, const Last_Name& right) {
+    return left.get_last_name() < right.get_last_name();
+}
+
+bool operator>(const Last_Name& left, const Last_Name& right) {
+    return !(left < right);
+}
+
+bool operator==(const Last_Name& left, const Last_Name& right) {
+    return left.get_last_name() == right.get_last_name();
+}
+
+bool operator!=(const Last_Name& left, const Last_Name& right) {
+    return !(left == right);
+}
