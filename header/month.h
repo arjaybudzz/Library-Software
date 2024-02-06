@@ -7,7 +7,7 @@ class Month {
     public:
         Month();
         explicit Month(int);
-        std::string get_month() const;
+        int get_month() const;
     private:
         int month;
 };

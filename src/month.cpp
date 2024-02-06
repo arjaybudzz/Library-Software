@@ -14,8 +14,8 @@ Month::Month(int m):
         if (m < MIN_MONTH || m > MAX_MONTH) throw std::out_of_range("Month is invalid.");
     }
 
-std::string Month::get_month() const {
-    return months[month];
+int Month::get_month() const {
+    return month;
 }
 
 // I/O operations
@@ -34,7 +34,7 @@ std::istream& operator>>(std::istream& input, Month& month) {
 }
 
 std::ostream& operator<<(std::ostream& output, const Month& month) {
-    output << month.get_month();
+    output << months[month.get_month()];
     return output;
 }
 
