@@ -13,3 +13,41 @@ Year::Year(int y):
     }
 
 int Year::get_year() const { return year; }
+
+// I/O operations
+
+std::istream& operator>>(std::istream& input, Year& year) {
+    int y_val;
+
+    input >> y_val;
+    if (input.fail()) {
+        input.clear();
+        return input;
+    }
+
+    year = Year{y_val};
+    return input;
+}
+
+std::ostream& operator<<(std::ostream& output, const Year& year) {
+    output << year.get_year();
+    return output;
+}
+
+// bool operations
+
+bool operator<(const Year& left, const Year& right) {
+    return left.get_year() < right.get_year();
+}
+
+bool operator>(const Year& left, const Year& right) {
+    return !(left < right);
+}
+
+bool operator==(const Year& left, const Year& right) {
+    return left.get_year() == right.get_year();
+}
+
+bool operator!=(const Year& left, const Year& right) {
+    return !(left == right);
+}
