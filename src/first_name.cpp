@@ -33,3 +33,19 @@ std::ostream& operator<<(std::ostream& output, const First_Name& first_name) {
     output << first_name.get_first_name();
     return output;
 }
+
+bool operator<(const First_Name& left, const First_Name& right) {
+    return left.get_first_name() < right.get_first_name();
+}
+
+bool operator>(const First_Name& left, const First_Name& right) {
+    return !(left < right);
+}
+
+bool operator==(const First_Name& left, const First_Name& right) {
+    return left.get_first_name() == right.get_first_name();
+}
+
+bool operator!=(const First_Name& left, const First_Name& right) {
+    return !(left == right);
+}
