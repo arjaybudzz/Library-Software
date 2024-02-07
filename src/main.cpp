@@ -1,22 +1,24 @@
 #include <iostream>
 #include <iomanip>
-#include "../header/day.h"
-#include "../header/month.h"
-#include "../header/date.h"
-#include "../header/year.h"
 #include "../header/book.h"
-#include "../header/first_name.h"
-#include "../header/last_name.h"
+#include <vector>
 
 int main() 
 try{
     Book book;
-    First_Name f_name;
-    Last_Name l_name;
+    int book_count = 0;
+    std::vector<Book> books;
 
-    std::cin >> book;
+    while(book_count <= 5) {
+        std::cin >> book;
+        books.push_back(book);
+        ++book_count;
+        std::cin.ignore();
+    }
 
-    std::cout << book << std::endl;
+    for (const auto& b : books) {
+        std::cout << b << '\n';
+    }
 
     return 0;
 }
