@@ -12,13 +12,15 @@ First_Name Name::get_f_name() const { return first_name; }
 Last_Name Name::get_l_name() const { return last_Name; }
 
 std::istream& operator>>(std::istream& input, Name& name) {
-    std::string f_name;
-    std::string l_name;
+    First_Name f_name;
+    Last_Name l_name;
 
-    std::getline(input, f_name);
-    std::getline(input, l_name);
+    std::cout << "First Name: ";
+    input >> f_name;
+    std::cout << "Last Name: ";
+    input >> l_name;
 
-    name = Name{First_Name{f_name}, Last_Name{l_name}};
+    name = Name{f_name, l_name};
     return input;
 }
 

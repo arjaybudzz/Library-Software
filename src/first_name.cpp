@@ -19,7 +19,7 @@ std::string First_Name::get_first_name() const { return name; }
 std::istream& operator>>(std::istream& input, First_Name& first_name) {
     std::string n_val;
 
-    input >> n_val;
+    std::getline(input, n_val);
     if (input.fail()) {
         input.clear();
         return input;

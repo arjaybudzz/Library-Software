@@ -4,18 +4,19 @@
 #include "../header/month.h"
 #include "../header/date.h"
 #include "../header/year.h"
+#include "../header/book.h"
+#include "../header/first_name.h"
+#include "../header/last_name.h"
 
 int main() 
 try{
-    Date date;
-    Date date2;
+    Book book;
+    First_Name f_name;
+    Last_Name l_name;
 
-    std::cout << "Enter a date: " << std::endl;
-    std::cin >> date;
-    std::cout << "Enter another date: " << std::endl;
-    std::cin >> date2;
-    
-    std::cout << std::boolalpha << (date == date2) << std::endl;
+    std::cin >> book;
+
+    std::cout << book << std::endl;
 
     return 0;
 }

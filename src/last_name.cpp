@@ -17,7 +17,7 @@ std::string Last_Name::get_last_name() const { return name; }
 std::istream& operator>>(std::istream& input, Last_Name& last_name) {
     std::string n_val;
 
-    input >> n_val;
+    std::getline(input, n_val);
     if (n_val.empty()) throw std::invalid_argument("Last name must not be empty!");
     if (input.fail()) {
         input.clear();
@@ -29,7 +29,7 @@ std::istream& operator>>(std::istream& input, Last_Name& last_name) {
 }
 
 std::ostream& operator<<(std::ostream& output, const Last_Name& last_name) {
-    output << last_name;
+    output << last_name.get_last_name();
     return output;
 }
 
