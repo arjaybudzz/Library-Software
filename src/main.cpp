@@ -1,25 +1,25 @@
 #include <iostream>
 #include <iomanip>
 #include "../header/book.h"
+#include "../header/library.h"
+#include "../header/name.h"
+#include "../header/date.h"
 #include <vector>
 
 int main() 
 try{
-    Book book;
-    int book_count = 0;
-    std::vector<Book> books;
 
-    while(book_count <= 5) {
-        std::cin >> book;
-        books.push_back(book);
-        ++book_count;
-        std::cin.ignore();
-    }
+    Library library;
+    Book book("James", Name(First_Name{"James"}, Last_Name{"Ryan"}), Date(Month{1}, Day{12}, Year{2000}));
+    Book book2("Viviene", Name(First_Name{"James"}, Last_Name{"Ryan"}), Date(Month{2}, Day{12}, Year{1978}));
 
-    for (const auto& b : books) {
-        std::cout << b << '\n';
-    }
+    library.add_book(book);
+    library.add_book(book2);
 
+    // library.view_available_books();
+
+    std::cout << library.back() << std::endl;
+    
     return 0;
 }
 catch(std::out_of_range& e) {

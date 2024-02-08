@@ -7,6 +7,8 @@ Book::Book():
 Book::Book(const std::string& t_val, const Name& n_val, const Date& d_val):
     title{t_val}, author{n_val}, published{d_val} {}
 
+Book::~Book() {}
+
 void Book::set_title(const std::string& t_val) {
     title = t_val;
 }
@@ -47,4 +49,12 @@ std::ostream& operator<<(std::ostream& output, const Book& book) {
     return output;
 }
 
+bool operator==(const Book& left, const Book& right) {
+    if (left.get_title() == right.get_title() && left.get_author() == right.get_author() && left.get_date_published() == right.get_date_published()) return true;
 
+    return false;
+}
+
+bool operator!=(const Book& left, const Book& right) {
+    return !(left == right);
+}

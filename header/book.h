@@ -9,6 +9,7 @@ class Book {
     public:
         Book();
         Book(const std::string&, const Name&, const Date&);
+        ~Book();
 
         void set_title(const std::string&);
         void set_author(const Name&);
@@ -26,5 +27,8 @@ class Book {
 
 std::istream& operator>>(std::istream&, Book&);
 std::ostream& operator<<(std::ostream&, const Book&);
+
+bool operator==(const Book&, const Book&);
+bool operator!=(const Book&, const Book&);
 
 #endif
